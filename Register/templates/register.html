@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/register.css'%}">
+    <title>Registeration Form</title>
+</head>
+<body>
+<div id="FirstDiv">
+    <h1>Student Registration Form</h1>
+    <div id = "SecondDiv">
+    <form action="/submit" method="post">
+    {% csrf_token %}
+    <h4 id = "FN">First Name <input type="text" name = "First_Name"></h4>
+    <h4 id = "LN">Last Name <input type="text" name = "Last_Name"></h4>
+    <h4 id = "ADD">Address <input type="text" name = "Address"></h4>
+    <h4 id = "PN">Phone Number <input type="text" name = "Phone"></h4>
+    <h4 id = "EI">Email Id<input type="text" name = "Email"></h4>
+    <h4 id = "CN">Collage Name <input type="text" name = "Collage"></h4>
+    <h4 id = "GEN">Gender Male<input value = "Male" type="radio"
+    name="Gender">Female<input value = "Female" type="radio"
+    name="Gender"></h4>
+    <h4>Area of Interest <input type="Checkbox">
+    Python<input type="Checkbox" name="Python" value="Python">
+    Java<input type="Checkbox" name="Java" value="Java">
+    PHP<input type="Checkbox" name="PHP" value="PHP">
+    Javascript<input type="Checkbox" name="Javascript" value="Javascript">
+    </h4>
+    <h1>{{msg}}</h1>
+    <input type="submit">
+</form>
+</div>
+</div>
+</body>
+</html>
